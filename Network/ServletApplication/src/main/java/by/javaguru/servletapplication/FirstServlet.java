@@ -17,12 +17,23 @@ public class FirstServlet extends HttpServlet {
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        var writer = resp.getWriter();
+        writer.println("<h1>Привет из First servlet</h1>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        var writer = resp.getWriter();
+        writer.println("<h1>" + req.getParameter("login") + "</h1>");
+        writer.println("<h1>" + req.getParameter("pwd") + "</h1>");
     }
 
     @Override
     public void destroy() {
         System.out.println("DESTROY");
     }
+
 }
