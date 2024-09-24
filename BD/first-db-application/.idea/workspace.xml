@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f8cc34-48c7-4021-aa59-10e595ec2f00" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/jvm.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/maven.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Network/ServletApplication/src/main/webapp/first.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Network/ServletApplication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Network/ServletApplication/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Network/ServletApplication/src/main/java/by/javaguru/servletapplication/FirstServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Network/ServletApplication/src/main/java/by/javaguru/servletapplication/FirstServlet.java" afterDir="false" />
+    <list default="true" id="39f8cc34-48c7-4021-aa59-10e595ec2f00" name="Changes" comment="Level 8">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +30,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Java Coding/Algorithms",
+    "last_opened_file_path": "C:/Java Coding/JavaEE/BD/first-db-application",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +51,14 @@
       <option name="presentableId" value="Default" />
       <updated>1725914059476</updated>
     </task>
+    <task id="LOCAL-00001" summary="Level 8">
+      <created>1725996933082</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725996933082</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,5 +74,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Level 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level 8" />
   </component>
 </project>
