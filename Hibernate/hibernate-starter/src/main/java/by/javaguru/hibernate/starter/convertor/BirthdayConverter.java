@@ -8,7 +8,6 @@ import java.util.Optional;
 
 public class BirthdayConverter implements AttributeConverter<Birthday, Date> {
 
-
     @Override
     public Date convertToDatabaseColumn(Birthday birthday) {
         return Optional.ofNullable(birthday)
