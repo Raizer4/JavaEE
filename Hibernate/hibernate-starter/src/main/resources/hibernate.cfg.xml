@@ -12,6 +12,10 @@
     <property name="format_sql">true</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
     <mapping class="by.javaguru.hibernate.starter.entity.User"/>
+    <mapping class="by.javaguru.hibernate.starter.entity.Company"/>
+    <mapping class="by.javaguru.hibernate.starter.entity.Profile"/>
+    <mapping class="by.javaguru.hibernate.starter.entity.Chat"/>
+    <mapping class="by.javaguru.hibernate.starter.entity.UserChat"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
   </session-factory>

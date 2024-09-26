@@ -1,9 +1,6 @@
 package by.javaguru.hibernate.starter;
 
-import by.javaguru.hibernate.starter.entity.Birthday;
-import by.javaguru.hibernate.starter.entity.PersonalInfo;
-import by.javaguru.hibernate.starter.entity.Role;
-import by.javaguru.hibernate.starter.entity.User;
+import by.javaguru.hibernate.starter.entity.*;
 import by.javaguru.hibernate.starter.util.HibernateUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,6 +10,9 @@ import java.time.LocalDate;
 public class HibernateRunner {
 
     public static void main(String[] args) {
+        Company company = Company.builder()
+                .name("Google")
+                .build();
 
         User user = User.builder()
                 .username("ivan@mail43.ru")
@@ -22,6 +22,7 @@ public class HibernateRunner {
                                 .birthDate(new Birthday(LocalDate.of(2000, 01, 01)))
                                 .build())
                 .role(Role.ADMIN)
+                .company(company)
                 .build();
 
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
@@ -29,6 +30,7 @@ public class HibernateRunner {
         {
             session.beginTransaction();
 
+            session.saveOrUpdate(company);
             session.saveOrUpdate(user);
 
             session.getTransaction().commit();

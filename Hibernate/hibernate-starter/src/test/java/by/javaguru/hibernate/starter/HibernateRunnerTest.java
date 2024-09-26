@@ -1,24 +1,109 @@
 package by.javaguru.hibernate.starter;
 
-import by.javaguru.hibernate.starter.entity.User;
+import by.javaguru.hibernate.starter.entity.*;
 
+import by.javaguru.hibernate.starter.util.HibernateUtil;
+import lombok.Cleanup;
 import org.junit.jupiter.api.Test;
 
 
-import javax.persistence.Column;
-import javax.persistence.Table;
-import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 class HibernateRunnerTest {
+
+    @Test
+    public void checkManyToMany(){
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
+
+        Chat chat = session.get(Chat.class,1L);
+        User user = session.get(User.class,2L);
+
+        UserChat userChat = UserChat.builder()
+                .createdAt(Instant.now())
+                .createdBy("Andrei")
+                .build();
+
+        userChat.setChat(chat);
+        userChat.setUser(user);
+
+        session.save(userChat);
+
+        session.getTransaction().commit();
+    }
+
+    @Test
+    public void checkOneToOne(){
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        User user = User.builder()
+                .username("ivan1525@mail43.ru")
+                .build();
+
+        Profile profile = Profile.builder()
+                .language("RU")
+                .street("Pobedy 11")
+                .build();
+
+        session.save(user);
+        profile.setUser(user);
+        session.save(profile);
+
+        session.getTransaction().commit();
+    }
+
+    @Test
+    public void checkOrphalRemoval(){
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        Company company = session.get(Company.class, 1);
+        company.getUsers().removeIf(user -> user.getId().equals(1));
+
+        session.getTransaction().commit();
+    }
+
+    @Test
+    public void addNewUserAndCompany(){
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        Company company = Company.builder()
+                .name("Yandex")
+                .build();
+
+        User user = User.builder()
+                .username("ivan12@mail43.ru")
+                .build();
+
+        company.addUser(user);
+
+        session.save(company);
+
+        session.getTransaction().commit();
+    }
+
+    @Test
+    public void checkOneToMany(){
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        var company = session.get(Company.class,1);
+        System.out.println(company);
+
+        session.getTransaction().commit();
+    }
+
 
     @Test
     public void testHibernateApi() throws SQLException, IllegalAccessException {
