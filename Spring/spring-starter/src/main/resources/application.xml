@@ -1,46 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="repo1" class="spring.repository.UserRepository">
-        <constructor-arg name="userName" ref="driver"/>
-        <constructor-arg name="poolSize" value="10"/>
+    <context:component-scan base-package="spring"/>
+    <context:annotation-config/>
+    <context:property-placeholder location="application.properties"/>
 
-        <constructor-arg name="args">
-            <list>
-                <value>1</value>
-                <value>2</value>
-                <value>3</value>
-            </list>
-        </constructor-arg>
-
-        <constructor-arg name="properties">
-               <map>
-                   <entry key="user" value="Andrei"/>
-                   <entry key="adress" value="Minsk"/>
-               </map>
-        </constructor-arg>
-
-    </bean>
-
-    <bean id="repo2" class="spring.repository.UserRepository">
-        <property name="userName" value="anrei@gmail.com"/>
-    </bean>
-
-    <bean name="dto" class="spring.dto.UserDto"/>
-
-    <bean name="mapper" class="spring.mapper.UserMapper">
-        <constructor-arg ref="dto"/>
-    </bean>
-
-    <bean name="userService" class="spring.service.UserService">
-        <constructor-arg ref="mapper"/>
-        <constructor-arg ref="repo1"/>
-    </bean>
 
     <bean name="driver" class="java.lang.String">
         <constructor-arg value="PostgresDriver"/>
     </bean>
+
 
 </beans>
