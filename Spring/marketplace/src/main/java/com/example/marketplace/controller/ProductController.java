@@ -15,7 +15,7 @@ import java.util.UUID;
 @Component
 public interface ProductController {
 
-    @PostMapping("/po")
+    @PostMapping("")
     UUID createProduct(@RequestBody  @Valid CreateProductRequest request);
 
     @GetMapping("/{id}")

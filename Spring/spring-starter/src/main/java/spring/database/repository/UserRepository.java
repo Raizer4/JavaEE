@@ -1,11 +1,12 @@
-package spring.repository;
+package spring.database.repository;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import spring.repository.pool.ConnectionPool;
+import spring.database.repository.pool.ConnectionPool;
+
 @Repository
 @ToString
 public class UserRepository {

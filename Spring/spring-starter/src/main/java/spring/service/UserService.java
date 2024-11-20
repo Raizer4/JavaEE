@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import org.springframework.stereotype.Service;
 import spring.mapper.UserMapper;
-import spring.repository.UserRepository;
+import spring.database.repository.UserRepository;
 @Service
 @RequiredArgsConstructor
 @ToString

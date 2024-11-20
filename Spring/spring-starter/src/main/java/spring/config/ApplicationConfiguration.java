@@ -1,7 +1,7 @@
 package spring.config;
 
 import org.springframework.context.annotation.*;
-import spring.repository.pool.ConnectionPool;
+import spring.database.repository.pool.ConnectionPool;
 
 @Configuration
 public class ApplicationConfiguration {

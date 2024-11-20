@@ -1,4 +1,4 @@
-package spring.repository.pool;
+package spring.database.repository.pool;
 
 import lombok.ToString;
 import org.springframework.stereotype.Component;
