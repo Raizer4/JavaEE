@@ -1,5 +1,6 @@
 package spring.config;
 
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.*;
 import spring.database.repository.pool.ConnectionPool;
 
@@ -7,8 +8,9 @@ import spring.database.repository.pool.ConnectionPool;
 public class ApplicationConfiguration {
 
     @Bean
-    public ConnectionPool connectionPool(){
-        return new ConnectionPool("postgres","1",20,"url");
+    public ConnectionPool connectionPool() {
+        return new ConnectionPool("postgres", "1", 20, "url");
     }
+
 
 }
