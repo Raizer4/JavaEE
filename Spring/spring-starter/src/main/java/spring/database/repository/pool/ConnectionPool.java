@@ -1,11 +1,16 @@
 package spring.database.repository.pool;
 
-import lombok.ToString;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
-@ToString
+
+
+@Component()
+@RequiredArgsConstructor
 public class ConnectionPool {
+
     private String username;
     private String password;
     private Integer poolSize;
@@ -17,4 +22,5 @@ public class ConnectionPool {
         this.poolSize = poolSize;
         this.url = url;
     }
+
 }
