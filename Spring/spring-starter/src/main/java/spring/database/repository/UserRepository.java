@@ -1,28 +1,47 @@
 package spring.database.repository;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import spring.database.repository.pool.ConnectionPool;
+import spring.database.entity.Role;
+
+import spring.database.entity.User;
+import spring.dto.IPersonalInfo;
+import spring.dto.PersonalInfo;
+import org.springframework.data.domain.Sort;
+import java.util.List;
+import java.util.Optional;
 
 @Repository
-@ToString
-@RequiredArgsConstructor
-public class UserRepository {
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Slice<User> findAllBy(Pageable pageable);
+
+    List<User> findFirst3By(Sort sort);
+
+    @Query(value = "select u.firstname, u.lastname, u.birth_date from users u " + " where company_id = :companyId ",
+    nativeQuery = true)
+    List<IPersonalInfo> findAllByCompanyId(Integer companyId);
+
+    @Query("select u from User u " +
+            "where u.firstname like %:firstname% and u.lastname like %:lastname%")
+    List<User> findAllByFirstnameContainingAndLastnameContaining(String firstname, String lastname);
+
+    @Query(value = "SELECT u.* FROM users u WHERE u.username = :username",
+            nativeQuery = true)
+    List<User> findAllByUsername(String username);
 
 
-    private final ConnectionPool connectionPool;
 
-    @PostConstruct
-    public void init(){
-        System.out.println("init UserRepository");
-    }
-
-    @PreDestroy
-    public void destroy() {
-        System.out.println("destroy UserRepository");
-    }
+    @Modifying(clearAutomatically = true)
+    @Query("update User u " +
+            "set u.role = :role " +
+            "where u.id in (:ids)")
+    int updateRole(Role role, Long... ids);
 
 }
