@@ -31,9 +31,7 @@ spring:
     password: 1
     driver-class-name: org.postgresql.Driver
   jpa:
-    open-in-view: false
     properties.hibernate:
         show_sql: true
         format_sql: true
         hbm2ddl.auto: validate
-
