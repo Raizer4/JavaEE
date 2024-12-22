@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class ApplicationConfiguration {
 
-    @Bean("connectionPool1")
+    @Bean("pool1")
     @Scope(BeanDefinition.SCOPE_SINGLETON)
     public ConnectionPool connectionPool(@Value("${db.username}") String username) {
         return new ConnectionPool(username, "root",20,"url");

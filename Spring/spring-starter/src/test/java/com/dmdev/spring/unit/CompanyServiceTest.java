@@ -1,9 +1,11 @@
-package com.dmdev.spring.service;
+package com.dmdev.spring.unit;
 
 import com.dmdev.spring.database.entity.Company;
 import com.dmdev.spring.database.repository.CompanyRepository;
 import com.dmdev.spring.dto.CompanyReadDto;
 import com.dmdev.spring.listener.entity.EntityEvent;
+import com.dmdev.spring.service.CompanyService;
+import com.dmdev.spring.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
