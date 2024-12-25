@@ -4,10 +4,10 @@ import com.dmdev.spring.database.entity.Role;
 import com.dmdev.spring.validator.UserInfo;
 import lombok.Value;
 import lombok.experimental.FieldNameConstants;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
@@ -18,6 +18,7 @@ public class UserCreateEditDto {
     @Email
     String username;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate birthDate;
 
     @Size(min = 3, max = 30)
@@ -26,4 +27,5 @@ public class UserCreateEditDto {
     String lastname;
     Role role;
     Integer companyId;
+    MultipartFile image;
 }
