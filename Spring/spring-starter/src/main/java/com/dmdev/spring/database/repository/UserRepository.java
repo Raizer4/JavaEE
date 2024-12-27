@@ -4,6 +4,7 @@ import com.dmdev.spring.database.entity.Role;
 import com.dmdev.spring.database.entity.User;
 import com.dmdev.spring.dto.IPersonalInfo;
 import com.dmdev.spring.dto.UserFilter;
+import com.dmdev.spring.mapper.Mapper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
@@ -14,6 +15,7 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>,
@@ -42,6 +44,8 @@ FilterUserRepository, QuerydslPredicateExecutor<User> {
             "where u.id in (:ids)")
     int updateRole(Role role, Long... ids);
 
+
+    Optional<User> findByUsername(String username);
 
 }
 

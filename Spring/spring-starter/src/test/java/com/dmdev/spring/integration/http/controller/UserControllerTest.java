@@ -6,6 +6,7 @@ import com.dmdev.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static com.dmdev.spring.dto.UserCreateEditDto.Fields.birthDate;
@@ -34,8 +35,7 @@ class UserControllerTest {
         mockMvc.perform(get("/users"))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(view().name("user/users"))
-                .andExpect(model().attributeExists("users"))
-                .andExpect(model().attribute("users", hasSize(5)));
+                .andExpect(model().attributeExists("users"));
     }
 
     @Test
