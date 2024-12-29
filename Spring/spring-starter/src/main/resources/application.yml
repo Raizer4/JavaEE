@@ -32,6 +32,9 @@ spring:
       show_sql: true
       format_sql: true
       hbm2ddl.auto: validate
+  messages:
+    basename: messages
+
 app:
   image:
     bucket: C:\Java Coding\JavaEE\Spring\spring-starter\images
