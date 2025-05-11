@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0230645-f9e3-4ef6-aa0c-3a717cd37329" name="Changes" comment="Spring Core">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_course_core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test/Test3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Detail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="c0230645-f9e3-4ef6-aa0c-3a717cd37329" name="Changes" comment="Hibernate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate_test_2/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hibernate_test_2/entity/Employee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +68,13 @@
       <recent name="hibernate_test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.hibernate_test.Test3">
-    <configuration name="Test3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spring_introduction.Test3" />
+  <component name="RunManager" selected="Application.Test1">
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hibernate_test_2.Test1" />
       <module name="spring_course_core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spring_introduction.*" />
+          <option name="PATTERN" value="hibernate_test_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1" />
         <item itemvalue="Application.hibernate_test.Test3" />
         <item itemvalue="Application.hibernate_test.Test2" />
         <item itemvalue="Application.hibernate_test.Test1" />
         <item itemvalue="Application.aop.Test1" />
-        <item itemvalue="Application.Test3" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1744312314522</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hibernate">
+      <created>1746914347025</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746914347025</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +186,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Spring Core" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Core" />
+    <MESSAGE value="Hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hibernate" />
   </component>
 </project>
